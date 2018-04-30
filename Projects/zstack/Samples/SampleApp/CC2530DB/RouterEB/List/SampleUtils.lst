@@ -1,0 +1,500 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         10/Mar/2018  23:31:05 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\Source\SampleUtils.c #
+#    Command line       =  -f E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\..\..\.. #
+#                          \Tools\CC2530DB\f8wRouter.cfg (-DCPU32MHZ          #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f                   #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\To #
+#                          ols\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 E:\Coding\IAR\RFTag\ZigBeeD #
+#                          ev\5_ZStack-2.5.1a\Projects\zstack\Samples\SampleA #
+#                          pp\Source\SampleUtils.c -D ZTOOL_P1 -D xMT_TASK    #
+#                          -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                 #
+#                          LCD_SUPPORTED=DEBUG -lC E:\Coding\IAR\RFTag\ZigBee #
+#                          Dev\5_ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\RouterEB\List\ -lA                    #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\RouterEB\Li #
+#                          st\ --diag_suppress Pe001,Pa010 -o                 #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\RouterEB\Ob #
+#                          j\ -e --no_code_motion --debug --core=plain        #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\Coding\IAR\RFTag\ZigBee #
+#                          Dev\5_ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\ -I E:\Coding\IAR\RFTag\ZigBeeDev\5_Z #
+#                          Stack-2.5.1a\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\Source\ -I E:\Coding\IAR\RFTag\ZigBeeDev\ #
+#                          5_ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\..\..\..\ZMain\TI2530DB\ -I               #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\hal\include\ -I                     #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\hal\target\CC2530EB\ -I             #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\mac\include\ -I                     #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\mac\high_level\ -I                  #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\mac\low_level\srf04\ -I             #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\mac\low_level\srf04\single_chip\    #
+#                          -I E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\..\..\.. #
+#                          \..\..\Components\mt\ -I                           #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\osal\include\ -I                    #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\services\saddr\ -I                  #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\services\sdata\ -I                  #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\af\ -I                        #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\nwk\ -I                       #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\sapi\ -I                      #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\sec\ -I                       #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\sys\ -I                       #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\stack\zdo\ -I                       #
+#                          E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\Components\zmac\ -I E:\Coding\IAR\RFTag\ZigBee #
+#                          Dev\5_ZStack-2.5.1a\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\Components\zmac\f8w\   #
+#                          -Ohz --require_prototypes                          #
+#    List file          =  E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\RouterEB\Li #
+#                          st\SampleUtils.lst                                 #
+#    Object file        =  E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\RouterEB\Ob #
+#                          j\SampleUtils.r51                                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\Coding\IAR\RFTag\ZigBeeDev\5_ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\SampleUtils.c
+      1          
+      2          
+      3          #include "SampleUtils.h"
+      4          #include "ZGlobals.h"
+      5          
+      6          /*********************************************************************
+      7           * @fn      SampleUtil_CompareUint8Array
+      8           *
+      9           * @brief   
+     10           *
+     11           * @param   addrCA
+     12           *
+     13           * @return  none
+     14           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     15          uint8 SampleUtil_CompareUint8Array(uint8* dest, uint8* src,uint8 length)
+   \                     SampleUtil_CompareUint8Array:
+     16          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+     17              uint8 i;
+     18              for( i=0; i<length; i++ )
+   \   000007   7F00         MOV     R7,#0x0
+   \   000009   8001         SJMP    ??SampleUtil_CompareUint8Array_0
+   \                     ??SampleUtil_CompareUint8Array_1:
+   \   00000B   0F           INC     R7
+   \                     ??SampleUtil_CompareUint8Array_0:
+   \   00000C   EF           MOV     A,R7
+   \   00000D   C3           CLR     C
+   \   00000E   95..         SUBB    A,?V0 + 0
+   \   000010   5019         JNC     ??SampleUtil_CompareUint8Array_2
+     19              {
+     20                  if( dest[i] != src[i] )
+   \   000012   8F82         MOV     DPL,R7
+   \   000014   A882         MOV     R0,DPL
+   \   000016   EA           MOV     A,R2
+   \   000017   28           ADD     A,R0
+   \   000018   F582         MOV     DPL,A
+   \   00001A   EB           MOV     A,R3
+   \   00001B   12....       LCALL   ??Subroutine4_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00001E   FE           MOV     R6,A
+   \   00001F   EC           MOV     A,R4
+   \   000020   28           ADD     A,R0
+   \   000021   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   000024   6E           XRL     A,R6
+   \   000025   60E4         JZ      ??SampleUtil_CompareUint8Array_1
+     21                  {
+     22                      return 0x01;
+   \   000027   7901         MOV     R1,#0x1
+   \   000029   8002         SJMP    ??SampleUtil_CompareUint8Array_3
+     23                  }
+     24              }
+     25              return 0x00;
+   \                     ??SampleUtil_CompareUint8Array_2:
+   \   00002B   7900         MOV     R1,#0x0
+   \                     ??SampleUtil_CompareUint8Array_3:
+   \   00002D   7F01         MOV     R7,#0x1
+   \   00002F   02....       LJMP    ?BANKED_LEAVE_XDATA
+     26          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   F582         MOV     DPL,A
+   \   000002   ED           MOV     A,R5
+   \   000003                REQUIRE ??Subroutine4_0
+   \   000003                ; // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine4_0:
+   \   000000   3400         ADDC    A,#0x0
+   \   000002   F583         MOV     DPH,A
+   \   000004   E0           MOVX    A,@DPTR
+   \   000005   22           RET
+     27          
+     28          /*********************************************************************
+     29           * @fn      SampleApp_GetShortAddrStr
+     30           *
+     31           * @brief   从4位十六进制字符数组中获取shortAddress
+     32           *
+     33           * @param   addrCA
+     34           *
+     35           * @return  none
+     36           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     37          uint16 SampleUtil_GetShortAddrFromU8Array(uint8* array)
+   \                     SampleUtil_GetShortAddrFromU8Array:
+     38          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FC           MOV     R4,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FD           MOV     R5,A
+     39              uint16 short_addr = 0x00;
+   \   000009   7A00         MOV     R2,#0x0
+   \   00000B   7B00         MOV     R3,#0x0
+     40              uint8 i = 0x00;
+     41              for( i=0; i<4; i++ )
+   \   00000D   7E00         MOV     R6,#0x0
+     42              {
+     43                  short_addr *= 16;
+   \                     ??SampleUtil_GetShortAddrFromU8Array_0:
+   \   00000F   8A..         MOV     ?V0 + 0,R2
+   \   000011   8B..         MOV     ?V0 + 1,R3
+   \   000013   7404         MOV     A,#0x4
+   \   000015   78..         MOV     R0,#?V0 + 0
+   \   000017   12....       LCALL   ?S_SHL
+   \   00001A   AA..         MOV     R2,?V0 + 0
+   \   00001C   AB..         MOV     R3,?V0 + 1
+     44                  if( array[i] >= '0' && array[i] <= '9' )
+   \   00001E   8E..         MOV     ?V0 + 0,R6
+   \   000020   EC           MOV     A,R4
+   \   000021   25..         ADD     A,?V0 + 0
+   \   000023   F582         MOV     DPL,A
+   \   000025   ED           MOV     A,R5
+   \   000026   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   5004         JNC     ??SampleUtil_GetShortAddrFromU8Array_1
+     45                  {
+     46                      short_addr += array[i] - '0';
+   \   00002C   24D0         ADD     A,#-0x30
+   \   00002E   8002         SJMP    ??SampleUtil_GetShortAddrFromU8Array_2
+     47                  }
+     48                  else
+     49                  {
+     50                      short_addr +=  array[i] - 'A' + 10;
+   \                     ??SampleUtil_GetShortAddrFromU8Array_1:
+   \   000030   24C9         ADD     A,#-0x37
+     51                  }
+     52              }
+   \                     ??SampleUtil_GetShortAddrFromU8Array_2:
+   \   000032   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000035   0E           INC     R6
+   \   000036   EE           MOV     A,R6
+   \   000037   C3           CLR     C
+   \   000038   9404         SUBB    A,#0x4
+   \   00003A   40D3         JC      ??SampleUtil_GetShortAddrFromU8Array_0
+     53              return short_addr;
+   \   00003C                REQUIRE ?Subroutine0
+   \   00003C                ; // Fall through to label ?Subroutine0
+     54          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   F8           MOV     R0,A
+   \   000001   E4           CLR     A
+   \   000002   34FF         ADDC    A,#-0x1
+   \   000004   F9           MOV     R1,A
+   \   000005   EA           MOV     A,R2
+   \   000006   28           ADD     A,R0
+   \   000007   FA           MOV     R2,A
+   \   000008   EB           MOV     A,R3
+   \   000009   39           ADDC    A,R1
+   \   00000A   FB           MOV     R3,A
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ??Subroutine4_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000003   24D0         ADD     A,#-0x30
+   \   000005   C3           CLR     C
+   \   000006   940A         SUBB    A,#0xa
+   \   000008   22           RET
+     55          
+     56          /*********************************************************************
+     57           * @fn      SampleApp_GetShortAddrStr
+     58           *
+     59           * @brief   从n位十进制字符数组中获取Value
+     60           *
+     61           * @param   addrCA
+     62           *
+     63           * @return  none
+     64           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     65          uint16 SampleUtil_GetValueFromU8Array(uint8* array, uint8 len)
+   \                     SampleUtil_GetValueFromU8Array:
+     66          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FC           MOV     R4,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FD           MOV     R5,A
+   \   000009   E9           MOV     A,R1
+   \   00000A   FE           MOV     R6,A
+     67              uint16 value = 0x00;
+   \   00000B   7A00         MOV     R2,#0x0
+   \   00000D   7B00         MOV     R3,#0x0
+     68              uint8 i = 0x00;
+     69              for( i=0; i<len; i++ )
+   \   00000F   7F00         MOV     R7,#0x0
+   \   000011   8006         SJMP    ??SampleUtil_GetValueFromU8Array_0
+     70              {
+     71                  value *= 10;
+     72                  value += array[i] >= 'A' ? (array[i]-'A'+10):(array[i]-'0');
+   \                     ??SampleUtil_GetValueFromU8Array_1:
+   \   000013   24D0         ADD     A,#-0x30
+   \                     ??SampleUtil_GetValueFromU8Array_2:
+   \   000015   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000018   0F           INC     R7
+   \                     ??SampleUtil_GetValueFromU8Array_0:
+   \   000019   EF           MOV     A,R7
+   \   00001A   C3           CLR     C
+   \   00001B   9E           SUBB    A,R6
+   \   00001C   5021         JNC     ??SampleUtil_GetValueFromU8Array_3
+   \   00001E   EA           MOV     A,R2
+   \   00001F   75F00A       MOV     B,#0xa
+   \   000022   A4           MUL     AB
+   \   000023   FA           MOV     R2,A
+   \   000024   A8F0         MOV     R0,B
+   \   000026   75F00A       MOV     B,#0xa
+   \   000029   EB           MOV     A,R3
+   \   00002A   A4           MUL     AB
+   \   00002B   28           ADD     A,R0
+   \   00002C   FB           MOV     R3,A
+   \   00002D   8F..         MOV     ?V0 + 0,R7
+   \   00002F   EC           MOV     A,R4
+   \   000030   25..         ADD     A,?V0 + 0
+   \   000032   12....       LCALL   ?Subroutine3 & 0xFFFF
+     73              }
+   \                     ??CrossCallReturnLabel_7:
+   \   000035   C3           CLR     C
+   \   000036   9441         SUBB    A,#0x41
+   \   000038   E0           MOVX    A,@DPTR
+   \   000039   40D8         JC      ??SampleUtil_GetValueFromU8Array_1
+   \   00003B   24C9         ADD     A,#-0x37
+   \   00003D   80D6         SJMP    ??SampleUtil_GetValueFromU8Array_2
+     74              return value;
+   \                     ??SampleUtil_GetValueFromU8Array_3:
+   \   00003F   80..         SJMP    ?Subroutine0
+     75          }
+     76          
+     77          /*********************************************************************
+     78           * @fn      SampleApp_GetShortAddrStr
+     79           *
+     80           * @brief   验证GUID格式是否正确
+     81           *
+     82           * @param   addrCA
+     83           *
+     84           * @return  none
+     85           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     86          uint8 SampleUtil_ValidateGuidFormat(uint8* pGuid)
+   \                     SampleUtil_ValidateGuidFormat:
+     87          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     88              uint8 i = 0x00;
+     89              for( i=0; i<4; i++ )
+   \   000005   7800         MOV     R0,#0x0
+     90              {
+     91                  if( !( (pGuid[i] >= '0' && pGuid[i] <= '9')
+     92                      || (pGuid[i] >= 'A' && pGuid[i] <= 'F')
+     93                       ) )
+   \                     ??SampleUtil_ValidateGuidFormat_0:
+   \   000007   88..         MOV     ?V0 + 0,R0
+   \   000009   EA           MOV     A,R2
+   \   00000A   25..         ADD     A,?V0 + 0
+   \   00000C   F582         MOV     DPL,A
+   \   00000E   EB           MOV     A,R3
+   \   00000F   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000012   400C         JC      ??SampleUtil_ValidateGuidFormat_1
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   24BF         ADD     A,#-0x41
+   \   000017   C3           CLR     C
+   \   000018   9406         SUBB    A,#0x6
+   \   00001A   4004         JC      ??SampleUtil_ValidateGuidFormat_1
+     94                  {
+     95                      return 0x01;
+   \   00001C   7901         MOV     R1,#0x1
+   \   00001E   8009         SJMP    ??SampleUtil_ValidateGuidFormat_2
+     96                  }
+     97              }
+   \                     ??SampleUtil_ValidateGuidFormat_1:
+   \   000020   08           INC     R0
+   \   000021   E8           MOV     A,R0
+   \   000022   C3           CLR     C
+   \   000023   9404         SUBB    A,#0x4
+   \   000025   40E0         JC      ??SampleUtil_ValidateGuidFormat_0
+     98              return 0x00;
+   \   000027   7900         MOV     R1,#0x0
+   \                     ??SampleUtil_ValidateGuidFormat_2:
+   \   000029   80..         SJMP    ?Subroutine0
+     99          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SampleUtil_CompareUint8Array?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SampleUtil_CompareUint8Array
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SampleUtil_GetShortAddrFromU8Array?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SampleUtil_GetShortAddrFromU8Array
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SampleUtil_GetValueFromU8Array?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SampleUtil_GetValueFromU8Array
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SampleUtil_ValidateGuidFormat?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SampleUtil_ValidateGuidFormat
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     SampleUtil_CompareUint8Array       0      0      9
+     SampleUtil_GetShortAddrFromU8Array
+                                        0      0     10
+     SampleUtil_GetValueFromU8Array     0      0     10
+     SampleUtil_ValidateGuidFormat      0      0     10
+
+
+   Segment part sizes:
+
+     Function/Label                             Bytes
+     --------------                             -----
+     SampleUtil_CompareUint8Array                 50
+     ?Subroutine3                                  3
+     ??Subroutine4_0                               6
+     SampleUtil_GetShortAddrFromU8Array
+                                                  60
+     ?Subroutine0                                  5
+     ?Subroutine2                                 12
+     ?Subroutine1                                  9
+     SampleUtil_GetValueFromU8Array               65
+     SampleUtil_ValidateGuidFormat                43
+     ??SampleUtil_CompareUint8Array?relay          6
+     ??SampleUtil_GetShortAddrFromU8Array?relay    6
+     ??SampleUtil_GetValueFromU8Array?relay        6
+     ??SampleUtil_ValidateGuidFormat?relay         6
+
+ 
+ 253 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+ 
+ 277 bytes of CODE memory
+
+Errors: none
+Warnings: none
